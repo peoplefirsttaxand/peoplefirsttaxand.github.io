@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Style Living LLC | Wealth & Investment Management</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* -----------------------------------------------------------
+           1. CORE VARIABLES & RESET
+           ----------------------------------------------------------- */
+        :root {
+            --color-primary: #1a1a1a;
+            --color-secondary: #2c2c2c;
+            --color-accent: #c5a47e; /* Gold/Beige tone for luxury */
+            --color-white: #ffffff;
+            --color-light-gray: #f4f4f4;
+            --color-border: #e0e0e0;
+            --text-main: #333333;
+            --text-light: #666666;
+            
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Manrope', sans-serif;
+            
+            --transition-speed: 0.3s;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: var(--color-white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-head);
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-speed);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* -----------------------------------------------------------
+           2. UTILITIES & LAYOUT
+           ----------------------------------------------------------- */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .btn-primary {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+            border: 2px solid var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--color-white);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-white);
+            border: 2px solid var(--color-white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+        }
+
+        .btn-accent {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            border: none;
+        }
+
+        .btn-accent:hover {
+            background-color: #b08d66;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            display: block;
+            font-weight: 700;
+        }
+
+        /* -----------------------------------------------------------
+           3. NAVIGATION
+           ----------------------------------------------------------- */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 20px 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            color: var(--color-white);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-white);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .cta-button {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+            padding: 10px 24px;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+        }
+
+        /* -----------------------------------------------------------
+           4. HERO SECTION
+           ----------------------------------------------------------- */
+        #hero {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2664&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: var(--color-white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero-sub {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* -----------------------------------------------------------
+           5. ABOUT SECTION
+           ----------------------------------------------------------- */
+        #about {
+            background-color: var(--color-white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            height: 500px;
+            background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+        }
+
+        /* -----------------------------------------------------------
+           6. SERVICES SECTION
+           ----------------------------------------------------------- */
+        #services {
+            background-color: var(--color-light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: var(--color-white);
+            padding: 40px;
+            border-radius: 4px;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--color-accent);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* -----------------------------------------------------------
+           7. ADVANTAGES SECTION
+           ----------------------------------------------------------- */
+        #advantages {
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+        }
+
+        #advantages .section-title {
+            color: var(--color-white);
+        }
+        
+        #advantages p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .advantage-item {
+            border-left: 1px solid var(--color-accent);
+            padding-left: 20px;
+        }
+
+        .advantage-item h3 {
+            color: var(--color-white);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        /* -----------------------------------------------------------
+           8. PROCESS SECTION
+           ----------------------------------------------------------- */
+        #process {
+            background-color: var(--color-white);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 50px;
+            right: 50px;
+            height: 1px;
+            background: var(--color-border);
+            z-index: 0;
+        }
+
+        .step-card {
+            background: var(--color-white);
+            z-index: 1;
+            width: 30%;
+            padding-right: 20px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: var(--font-head);
+            font-size: 1.2rem;
+        }
+
+        .step-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        /* -----------------------------------------------------------
+           9. FOOTER & CONTACT INFO
+           ----------------------------------------------------------- */
+        footer {
+            background-color: #111;
+            color: rgba(255,255,255,0.6);
+            padding: 80px 0 40px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            color: var(--color-white);
+            font-size: 1.5rem;
+            font-family: var(--font-head);
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-info h4 {
+            color: var(--color-white);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-details p {
+            margin-bottom: 10px;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .contact-details span {
+            display: block;
+            color: var(--color-white);
+            margin-bottom: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        /* -----------------------------------------------------------
+           10. MODAL & FORM STYLES
+           ----------------------------------------------------------- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: var(--color-white);
+            width: 100%;
+            max-width: 550px;
+            padding: 50px;
+            border-radius: 4px;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--color-primary);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--color-border);
+            border-radius: 2px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--color-primary);
+        }
+
+        .success-message {
+            text-align: center;
+            display: none;
+        }
+
+        .success-icon {
+            font-size: 3rem;
+            color: #27ae60;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* -----------------------------------------------------------
+           11. RESPONSIVE MEDIA QUERIES
+           ----------------------------------------------------------- */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .about-grid,
+            .services-grid,
+            .advantages-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image {
+                order: -1;
+                height: 300px;
+            }
+
+            .process-steps {
+                flex-direction: column;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+            
+            .step-card {
+                width: 100%;
+                margin-bottom: 40px;
+                border-left: 2px solid var(--color-light-gray);
+                padding-left: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; 
+                /* Simple hide for mobile to keep code clean, 
+                   normally would implement hamburger */
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                text-align: center;
+            }
+
+            .modal-content {
+                width: 90%;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                Family Style Living <span>LLC</span>
+            </a>
+            <nav>
+                <div class="nav-links">
+                    <a href="#about">Our Expertise</a>
+                    <a href="#services">Services</a>
+                    <a href="#process">The Process</a>
+                    <button class="cta-button open-modal-btn">Book a Consultation</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Preserving Wealth.<br>Elevating Lifestyles.<br>Securing Futures.</h1>
+                <p class="hero-sub">
+                    Bespoke financial strategies designed for discerning families who demand clarity, precision, and measurable results in their investment activities. We don't just manage assets; we curate your legacy.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary open-modal-btn">Start the Conversation</button>
+                    <a href="#services" class="btn btn-secondary">Explore Solutions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="section-subtitle">Who We Are</span>
+                    <h2>Decades of Financial Expertise Matched with a Personal Touch</h2>
+                    <p>
+                        At Family Style Living LLC, we operate at the intersection of traditional wealth management and modern investment innovation. Founded on the principle that true wealth is about more than just numbers, we focus on Other Financial Investment Activities that drive long-term stability for high-net-worth families.
+                    </p>
+                    <p>
+                        Our team brings together specialists in private equity, real estate syndication, and diverse asset allocation to build portfolios that withstand market volatility. We believe in a transparent, "people-first" approach where your family's goals dictate the strategy, not the other way around.
+                    </p>
+                    <p>
+                        Located in the heart of Orlando, we serve a global clientele who seek to transcend standard banking solutions. We are your fiduciaries, your partners, and the guardians of your financial future.
+                    </p>
+                    <button class="btn btn-accent open-modal-btn">Learn More About Us</button>
+                </div>
+                <div class="about-image" role="img" aria-label="Financial planning meeting"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto 50px auto;">
+                <span class="section-subtitle">Our Expertise</span>
+                <h2 class="section-title">Comprehensive Investment Solutions</h2>
+                <p>We provide a curated suite of financial activities tailored to complex family portfolios.</p>
+            </div>
+            
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-icon">&#9878;</div> <h3>Alternative Asset Allocation</h3>
+                    <p>
+                        We move beyond traditional stocks and bonds to explore high-yield opportunities in private markets. Our team conducts rigorous due diligence to identify alternative investments that offer uncorrelated returns. This ensures your portfolio remains robust regardless of public market fluctuations.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">&#128200;</div> <h3>Generational Wealth Transfer</h3>
+                    <p>
+                        Structuring your assets to ensure a seamless transition of wealth to the next generation is our specialty. We utilize advanced trust structures and tax-efficient vehicles to minimize liability. Our goal is to preserve the principal while empowering your heirs.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">&#127963;</div> <h3>Real Estate Syndication</h3>
+                    <p>
+                        Gain access to institutional-grade real estate deals that are typically reserved for large corporations. We pool resources to invest in premium commercial and residential developments. This provides both passive income streams and substantial capital appreciation.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantages" class="section-padding">
+        <div class="container">
+            <span class="section-subtitle">Why Partner With Us</span>
+            <h2 class="section-title">The Family Style Standard</h2>
+            
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <h3>Fiduciary Commitment</h3>
+                    <p>
+                        We are legally and ethically bound to act in your best interest at all times. There are no hidden fees, no conflicting incentives, and no products pushed for commissions—only objective advice tailored to your life.
+                    </p>
+                </div>
+
+                <div class="advantage-item">
+                    <h3>Holistic Perspective</h3>
+                    <p>
+                        We view your finances through a wide lens, considering how tax implications, legal structures, and investment performance interact. This 360-degree view allows us to identify opportunities that siloed advisors often miss.
+                    </p>
+                </div>
+
+                <div class="advantage-item">
+                    <h3>Adaptive Agility</h3>
+                    <p>
+                        The financial landscape changes rapidly, and large institutions are often too slow to react. As a boutique firm, we pivot strategies quickly in response to economic shifts to protect and grow your capital.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="section-padding">
+        <div class="container">
+            <span class="section-subtitle">How We Work</span>
+            <h2 class="section-title">Our Roadmap to Your Success</h2>
+            
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Discovery & Financial Audit</h3>
+                    <p>
+                        We begin by listening. We conduct a deep-dive analysis of your current assets, liabilities, and, most importantly, your family's aspirations. We identify gaps in your current strategy and define clear objectives.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Strategy Formulation</h3>
+                    <p>
+                        Based on our audit, we design a bespoke investment framework. This includes selecting specific vehicles, optimizing tax positions, and creating a timeline for implementation that aligns with your comfort level.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Execution & Monitoring</h3>
+                    <p>
+                        We deploy capital with precision and provide continuous oversight. You receive transparent reporting, and we hold regular reviews to adjust the strategy as your life evolves or market conditions change.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info" style="flex: 1; min-width: 250px;">
+                    <a href="#" class="footer-logo">FAMILY STYLE LIVING LLC</a>
+                    <p>Empowering families through intelligent financial architecture.</p>
+                </div>
+
+                <div class="footer-info contact-details" style="flex: 1; min-width: 250px;">
+                    <h4>Visit Us</h4>
+                    <span>20 Sura Blvd</span>
+                    <span>32809 Orlando, FL</span>
+                </div>
+
+                <div class="footer-info contact-details" style="flex: 1; min-width: 250px;">
+                    <h4>Contact</h4>
+                    <p>For inquiries and appointments:</p>
+                    <a href="mailto:lemon@peoplefirsttaxandwealthmanagement.info" style="color: var(--color-white); text-decoration: underline;">
+                        lemon@peoplefirsttaxandwealthmanagement.info
+                    </a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2024 Family Style Living LLC. All Rights Reserved. Investment involves risk.
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            
+            <div id="formContainer">
+                <span class="section-subtitle">Get in Touch</span>
+                <h3 style="margin-bottom: 20px;">Request a Consultation</h3>
+                <p style="font-size: 0.9rem;">Fill out the form below and our team will contact you via email to schedule an appointment.</p>
+                
+                <form id="consultationForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest">Area of Interest</label>
+                        <select id="interest" name="interest">
+                            <option value="wealth">Wealth Planning</option>
+                            <option value="investment">Investment Management</option>
+                            <option value="realestate">Real Estate Syndication</option>
+                            <option value="other">Other Inquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="How can we help you?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="background-color: var(--color-primary); color: white; width: 100%; border: none;">Send Request</button>
+                    <p style="font-size: 0.75rem; margin-top: 15px; color: #999;">
+                        By submitting this form, you agree to our privacy policy. Your information is kept strictly confidential.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content" style="text-align: center; max-width: 400px;">
+            <button class="close-modal" id="closeSuccessModal">&times;</button>
+            <div class="success-message" style="display: block;">
+                <span class="success-icon">&#10003;</span>
+                <h3>Message Sent</h3>
+                <p>Thank you for reaching out to Family Style Living LLC. We have received your request and will respond to your email shortly.</p>
+                <button class="btn btn-primary" id="successBtn" style="background-color: var(--color-primary); color: white; border: none; margin-top: 10px;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Elements
+            const openModalBtns = document.querySelectorAll('.open-modal-btn');
+            const contactModal = document.getElementById('contactModal');
+            const successModal = document.getElementById('successModal');
+            const closeModalBtn = document.getElementById('closeModal');
+            const closeSuccessBtn = document.getElementById('closeSuccessModal');
+            const successBtn = document.getElementById('successBtn');
+            const form = document.getElementById('consultationForm');
+
+            // Open Contact Modal
+            openModalBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    contactModal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                });
+            });
+
+            // Close Contact Modal
+            const closeContact = () => {
+                contactModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            };
+
+            closeModalBtn.addEventListener('click', closeContact);
+
+            // Close Success Modal
+            const closeSuccess = () => {
+                successModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            };
+
+            closeSuccessBtn.addEventListener('click', closeSuccess);
+            successBtn.addEventListener('click', closeSuccess);
+
+            // Close on outside click
+            window.addEventListener('click', (e) => {
+                if (e.target === contactModal) {
+                    closeContact();
+                }
+                if (e.target === successModal) {
+                    closeSuccess();
+                }
+            });
+
+            // Handle Form Submission
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simulate form processing delay
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerText;
+                submitBtn.innerText = 'Sending...';
+                
+                setTimeout(() => {
+                    // Reset form
+                    form.reset();
+                    submitBtn.innerText = originalText;
+                    
+                    // Close contact modal and open success modal
+                    closeContact();
+                    setTimeout(() => {
+                        successModal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }, 300); // Small delay for smooth transition
+                    
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
